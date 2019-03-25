@@ -1,0 +1,11 @@
+.SetDay-set{
+    width: 8vw;
+    height: 3vh;
+    border: none;
+    text-decoration: none;
+    background: rgba(180, 71, 93, 1);
+    color:white;
+}
+.SetDay-text{
+    height: 2vh;
+}

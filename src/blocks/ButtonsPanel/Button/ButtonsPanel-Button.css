@@ -1,0 +1,27 @@
+
+.ButtonsPanel-Button {
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: rgba(180, 71, 93, 1);
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+    transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.ButtonsPanel-Button:hover,
+.ButtonsPanel-Button:focus {
+    background: rgb(255, 99, 132);
+}
+ 
+
+.ButtonsPanel-Button:active {
+    transform: scale(0.99);
+}
