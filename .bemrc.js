@@ -10,11 +10,10 @@ module.exports = {
       path: 'src/desktop',
       scheme: 'nested'
     },
-
   ],
   // remove sets to build one universal bundle for index.html
   sets: {
-    desktop: 'common',
+    desktop: 'common desktop',
   },
   modules: {
     'bem-tools': {

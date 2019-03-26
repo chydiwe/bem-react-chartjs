@@ -7,7 +7,12 @@
 }
 
 .SelectPanel {
-    display: inline-block;
+    display:block;
+    width: 10vw;
+    color:white;
+    background: #b4475d;
+    text-align: center;
+    margin: 2vh 0 2vh 0;
 }
 .SelectPanel-dropdawn {
     display: none;

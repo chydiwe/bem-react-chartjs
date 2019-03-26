@@ -6,6 +6,9 @@ import Button from "e:Button"
 export default decl({
   block: 'ButtonsPanel',
   tag: 'div',
+  mods({ size, type }) {
+    return { size, type };
+  },
   content({
 
             getDataForDay,
