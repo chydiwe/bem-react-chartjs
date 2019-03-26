@@ -6,11 +6,12 @@ import InfoBlock from 'e:InfoBlock'
 import ButtonsPanel from 'b:ButtonsPanel'
 import SelectPanel from 'b:SelectPanel'
 import SetDay from 'b:SetDay'
+
 function changeItemIfEnd(item, maxItem) {
   if (item > maxItem - 1)
     item = 0;
   if (item < 0)
-    item = maxItem-1;
+    item = maxItem - 1;
   return item
 }
 
@@ -30,7 +31,7 @@ export default decl({
       },
       currentDay: 0,
       currentMonth: 0,
-      currentYear:0,
+      currentYear: 0,
       daysOnMonth: 30,
       monthName: '',
     };
@@ -72,7 +73,7 @@ export default decl({
   }
   , getDataForMonth(month) {
     month = changeItemIfEnd(month, 12);
-    this.getDaysOnMonth(month).then(()=>fetch(`http://127.0.0.1:8001/data/month/${this.state.currentYear}/${month}`, {method: "GET"}))
+    this.getDaysOnMonth(month).then(() => fetch(`http://127.0.0.1:8001/data/month/${this.state.currentYear}/${month}`, {method: "GET"}))
       .then(res => res.json().then(res => {
           let labels = [];
           for (let i = 0; i < this.state.daysOnMonth; i++)
@@ -98,7 +99,7 @@ export default decl({
 
   },
   getDataForYear(year) {
-    changeItemIfEnd(year,10);
+    changeItemIfEnd(year, 2);
     fetch(`http://127.0.0.1:8001/data/year/${year}`, {method: "GET"})
       .then(res => res.json()).then(
       res => {
@@ -135,8 +136,9 @@ export default decl({
                       getDataForYear={this.getDataForYear} currentMonth={this.state.currentMonth}
                       currentDay={this.state.currentDay} currentYear={this.state.currentYear}/>
         <SelectPanel getDataForMonth={this.getDataForMonth}/>
-        <InfoBlock text={`${2000+this.state.currentYear}  ${this.state.monthName} ${this.state.currentDay + 1}`}/>
         <SetDay daysOnMonth={this.state.daysOnMonth} getDataForDay={this.getDataForDay}/>
+        <InfoBlock text={`${2000 + this.state.currentYear}  ${this.state.monthName} ${this.state.currentDay + 1}`}/>
+
         <Line ref="chart" data={this.state.data}/>
       </Fragment>
     );

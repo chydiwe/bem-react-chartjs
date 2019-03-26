@@ -15,7 +15,7 @@ export default decl({
   },
   setDay() {
 
-    if(Number(this.state.numDay) && this.state.numDay<this.props.daysOnMonth && this.state.numDay>0)
+    if(Number(this.state.numDay) && this.state.numDay<=this.props.daysOnMonth && this.state.numDay>0)
       this.props.getDataForDay(Number(this.state.numDay)-1);
     else alert('Неправильный ввод')
 
