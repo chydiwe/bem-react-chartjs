@@ -99,7 +99,7 @@ export default decl({
 
   },
   getDataForYear(year) {
-    changeItemIfEnd(year, 2);
+    year=changeItemIfEnd(year, 2);
     fetch(`http://127.0.0.1:8001/data/year/${year}`, {method: "GET"})
       .then(res => res.json()).then(
       res => {

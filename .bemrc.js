@@ -3,32 +3,30 @@ module.exports = {
     {
       layer: 'common',
       path: 'src/blocks',
+      scheme: 'nested'
     },
     {
       layer: 'desktop',
       path: 'src/desktop',
+      scheme: 'nested'
     },
     {
-      layer: 'touch',
-      path: 'src/touch',
-    }
-  ].map(level => Object.assign({
-      schemeOptions: 'react',
-      naming: 'react',
+      layer: 'mobile',
+      path: 'src/mobile',
       scheme: 'nested'
-    }, level)
-  ),
+    }
+  ],
   // remove sets to build one universal bundle for index.html
   sets: {
     desktop: 'common desktop',
-    touch: 'common touch'
+    mobile: 'common mobile'
   },
   modules: {
     'bem-tools': {
       plugins: {
         create: {
           levels: {
-            'src/blocks': {default: true}
+            'src/blocks': { default: true }
           },
           techs: ['js', 'css'],
           templates: {
